@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  workspace:
+    image: universityofabdn/docker-php73-workspace
+    volumes:
+    - ${HOST_APP_PATH}:/var/www
+    extra_hosts:
+    - "dockerhost:${HOST_IP}"
+    - "rac26testvip.uoa.abdn.ac.uk:${HOST_IP}"
+    - "authldap1.abdn.ac.uk:${HOST_IP}"
+    tty: true
+    environment:
+    - LD_LIBRARY_PATH=${LD_LIBRARY_PATH}
+    - PUBLIC_ROOT=${PUBLIC_ROOT}
+    networks:
+    - app
+  web:
+    image: universityofabdn/docker-php73
+    ports:
+    - 127.0.0.1:${HOST_PORT_HTTP}:80
+    - 127.0.0.1:${HOST_PORT_HTTPS}:443
+    - 127.0.0.1:${HOST_PORT_ORACLE}:1521
+    volumes:
+    - ${HOST_APP_PATH}:/var/www
+    extra_hosts:
+    - "dockerhost:${HOST_IP}"
+    environment:
+    - LD_LIBRARY_PATH=${LD_LIBRARY_PATH}
+    - PUBLIC_ROOT=${PUBLIC_ROOT}
+    - SERVER_NAME=${SERVER_NAME}
+    networks:
+    - app
+networks:
+  app:
+    driver: bridge
