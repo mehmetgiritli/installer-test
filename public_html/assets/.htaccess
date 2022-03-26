@@ -1,7 +1,0 @@
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-
-    # Utilise file revving for cache busting
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.+)\.(\d+)\.(js|css|gif|png|jpe?g|pdf|xml|svg|eot|ttf|otf|woff2?|ico|htc)$ $1.$3 [L]
-</IfModule>
