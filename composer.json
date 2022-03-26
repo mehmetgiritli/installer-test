@@ -13,7 +13,9 @@
     "scripts": {
         "post-root-package-install": [
             "@composer create-project laravel/laravel laravel \"8.*\"",
-            "cd laravel; composer info"
+            "cd laravel",
+            "composer config repositories.microservice-starter-lib vcs https://github.com/uofa/microservice-starter-lib",
+            "composer require uofa/microservice-libs"
         ]
     },
     "config": {
