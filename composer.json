@@ -4,6 +4,12 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "metaproject",
+    "authors": [
+        {
+            "name": "Mehmet Giritli",
+            "email": "mehmet.giritli@abdn.ac.uk"
+        }
+    ],
     "scripts": {
         "post-root-package-install": [
             "@composer create-project laravel/laravel laravel \"8.*\"",
@@ -11,10 +17,5 @@
             "cd laravel ; composer config repositories.uofa-maintenance vcs https://github.com/uofa/uofa-maintenance.git",
             "cd laravel ; composer require --dev uofa/microservice-libs"
         ]
-    },
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "optimize-autoloader": true
     }
 }

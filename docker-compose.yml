@@ -7,8 +7,6 @@ services:
     - ${HOST_APP_PATH}:/var/www
     extra_hosts:
     - "dockerhost:${HOST_IP}"
-    - "rac26testvip.uoa.abdn.ac.uk:${HOST_IP}"
-    - "authldap1.abdn.ac.uk:${HOST_IP}"
     tty: true
     environment:
     - LD_LIBRARY_PATH=${LD_LIBRARY_PATH}
