@@ -1,7 +1,0 @@
-{
-    "packages": {
-        "uofa/lsl": {
-            "dev-master": { @composer.json }
-        }
-    }
-}
