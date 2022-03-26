@@ -12,7 +12,7 @@
     ],
     "scripts": {
         "post-root-package-install": [
-            "@composer create-project --add-repository \"https://github.com/uofa/microservice-starter-lib\" laravel/laravel laravel \"^8\""
+            "@composer create-project laravel/laravel laravel \"^8\" -s stable"
         ]
     },
     "config": {
